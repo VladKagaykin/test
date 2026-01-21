@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1762790729 source:/home/avcd58/code/test/main.cpp
+	<iostream>
+	<string>
+
