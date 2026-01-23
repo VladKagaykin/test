@@ -424,9 +424,9 @@ using namespace std;
 int x = 196;
 int y = 54;
 int z = y;
-int l_x = y/2+10;
+int l_x = 25;
 int l_y = y;
-int l_z = y/2+10;
+int l_z = 25;
 
 wchar_t gradient[] = {L'█',L'▓',L'▒',L'░',L'#',L'=',L'+',L'*',L'~',L'-',L'.'};
 int gradient_size = sizeof(gradient)/sizeof(wchar_t);
@@ -511,8 +511,11 @@ void release_buffer() {
 }
 void square(int t_x, int t_y, int t_z, int size){
     for(int i=t_y;i<=t_y+size-1;i++){
+        if(i>y or i<0) continue;
         for(int j=t_x;j<t_x+size;j++){
+            if(j>x or j<0) continue;
             for (int l = t_z; l < t_z+size; l++) {
+                if(l>z or l<0) continue;
                 int index = sqrt(pow((j-l_x),2)+pow((i-l_y),2)+pow((l-l_z),2))/shader;
                 if (index > gradient_size-1) index=gradient_size-1;
                 buffer[i][j][l] = gradient[index];
@@ -598,7 +601,7 @@ void circle(int t_x, int t_y, int t_z, int size){
 int main(){
     setlocale(LC_ALL, "");
     init_buffer();
-    square(0,10,0,10);
+    square(-1,10,0,10);
     square(0,0,0,5);
     circle(20,15,20,12); 
     
