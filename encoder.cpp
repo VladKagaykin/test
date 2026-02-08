@@ -93,7 +93,7 @@ string read_image(string load_image) {
 }
 
 void create_void_image(string encode_text, string img_name, int height, int width){
-    Mat img(height, width, CV_8UC4, Scalar(0, 0, 0, 0));
+    Mat img(height, width, CV_8UC3, Scalar(0, 0, 0));
     imwrite(img_name, img);
     encode_text_to_image(img_name,encode_text);
 }
