@@ -1,0 +1,3 @@
+#include<iostream>
+
+char snowflake[] = {'.',',','-','+','#'};
