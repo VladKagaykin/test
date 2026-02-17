@@ -147,7 +147,6 @@ void createTextTransitionVideo(const string& startText, const string& endText, i
                                 " -i " + tempDir + "/frame_%06d.png" +
                                 " -c:v libx264 -pix_fmt yuv420p " +
                                 outputVideo;
-    
     cout << "Выполняем команду: " << ffmpegCommand << endl;
     
     int result = system(ffmpegCommand.c_str());
